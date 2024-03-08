@@ -1,0 +1,78 @@
+/* styles.css */
+
+/* Table styling */
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+  }
+  
+  th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Alternate row background color */
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Header text alignment */
+  th {
+    text-align: center;
+  }
+  
+  /* Center align text in table cells */
+  td {
+    text-align: center;
+  }
+  
+  /* Header text color */
+  th {
+    color: #333;
+  }
+  
+  /* Hover effect on table rows */
+  tr:hover {
+    background-color: #ddd;
+  }
+
+  h3 {
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .customerName{
+    margin-bottom: 40px;
+    width: 100%;
+    height: 40px;
+  }
+
+  .totalSells{
+    background-color: rgb(218, 226, 186);
+    height: 40px;
+    width: 50%;
+    text-align: left;
+    padding: 5px;
+  }
+  .summarySells{
+    background-color: rgb(218, 226, 186);
+    height: 40px;
+    width: 70%;
+    text-align: left;
+    padding: 5px;
+  }
+
+  .lowTable{
+    width: 70%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+  }
+
+
+  

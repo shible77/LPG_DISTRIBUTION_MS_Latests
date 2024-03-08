@@ -1,0 +1,114 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id      Int   @id @default(autoincrement())
+  name    String
+  email   String   @unique
+  password String
+}
+
+model employee {
+  employee_id   Int      @id @default(autoincrement())
+  first_name    String
+  last_name     String
+  date_of_birth DateTime
+  present_address String
+  parmanent_address String
+  mobile_no     String
+  start_work    DateTime
+  stop_work     DateTime?
+  designation   String
+  category      String
+  salary        String
+  active_status String
+  employee_image String
+}
+
+model product {
+  product_id      Int      @id @default(autoincrement())
+  product_name    String
+  product_type    String
+  product_category String
+  unit            Int
+  selling_price   Int
+  brand           String
+}
+
+model purchases {
+  purchase_id     Int @id @default(autoincrement())	
+  date    DateTime	
+  location		String
+  supplier		String
+  status		String
+  gas_5_5		Int?
+  cyl_5_5		Int?		
+  gas_12		Int?		
+  cyl_12		Int?	
+  gas_25		Int?		
+  cyl_25		Int?		
+  gas_35		Int?	
+  cyl_35	  Int?
+  gas_45		Int?		
+  cyl_45		Int?	
+  total     Int
+}
+
+model sales{
+  sales_id  Int @id @default(autoincrement())
+  date  DateTime
+  delivery_date DateTime
+  customer_name String
+  location  String
+  gas_5_5 Int?
+  cyl_5_5 Int?
+  gas_12  Int?
+  cyl_12  Int?
+  gas_25  Int?
+  cyl_25  Int?
+  gas_35  Int?
+  cyl_35  Int?
+  gas_45  Int?
+  cyl_45  Int?
+  total Int
+}
+
+model accounts {
+  account_id Int @id @default(autoincrement())
+  account_name String
+  account_type String
+  account_number String
+  short_description String
+  initial_balance Int
+  net_balance Int
+}
+
+model contacts {
+  contact_id Int @id @default(autoincrement())
+  name String
+  company_name String
+  email String
+  mobile String
+  full_address String
+  district String
+  contactType String
+}
+
+model stock {
+  stock_id Int @id @default(autoincrement())
+  kg_5_5 Int
+  kg_12 Int
+  kg_25 Int
+  kg_35 Int
+  kg_45 Int
+  total Int
+}

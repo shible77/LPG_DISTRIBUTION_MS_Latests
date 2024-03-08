@@ -1,6 +1,6 @@
 # LPG Distribution Management System
 
-Welcome to the LPG Distribution Management System! This system is designed to help you manage various aspects of your LPG distribution business, including contacts, employee information, sales and purchase records, product details, stock management, accounts, and reporting. The project is structured with separate folders for the frontend, backend, an additional backend folder (backend1), and a folder to store SQL files (database).
+Welcome to the LPG Distribution Management System! This system is designed to help you manage various aspects of your LPG distribution business, including contacts, employee information, sales and purchase records, product details, stock management, accounts, and reporting. The project is structured with separate folders for the frontend, backend, an additional backend folder (backend1), and a folder to store MySql files (database).
 
 ## Table of Contents
 
@@ -16,8 +16,8 @@ Welcome to the LPG Distribution Management System! This system is designed to he
 
 - **frontend**: Contains the code for the user interface.
 - **backend**: Primary backend codebase.
-- **backend1**: Additional backend codebase (if needed).
-- **database**: Stores SQL files.
+- **backend1**: Additional backend codebase.
+- **database**: Stores MySql file.
 
 ## Features
 
@@ -39,7 +39,7 @@ Welcome to the LPG Distribution Management System! This system is designed to he
 
 ## Setup Instructions
 
-1. Clone the repository: `git clone [repository_url]`
+1. Clone the repository: `git clone https://github.com/shible77/LPG_DISTRIBUTION_MS_Latests.git`
 
 2. Navigate to the project directory: `cd LPG_Distribution_Management_System`
 
@@ -58,3 +58,38 @@ Welcome to the LPG Distribution Management System! This system is designed to he
    cd ../backend1
    npm install
    ```
+4. Open Xampp, then start the Xampp server and MySql. Then click the admin button beside the MySql start button. It will take you to the phpmyadmin page. Then click on the database it will take you to the database page. Now you have to create a database(Note: keep the name of the database lpg_distribution). After creating the database, at the top of the page you can see Import, click on it. Then it will take you to the page where you can import the database by clicking on select files. After selecting the lpg_distribution.sql from the database folder of the project directory, you have to click the import button in the lower part of the page. Now, the database is ready.
+5. Now, start the application.
+   ```bash
+   # For frontend
+   cd frontend
+   npm start
+
+   # For backend
+   cd ../backend
+   npm start
+
+   #for backend1
+   cd ../backend1
+   npm start
+   ```
+## Usage
+
+1. Access the frontend through the provided URL after starting the frontend server.
+
+2. Use the system to manage contacts, employee information, sales and purchases, products, stock, accounts, and generate reports.
+
+## Folder Details
+- **frontend**: Contains the user interface code.
+- **backend**: Main backend codebase.
+- **backend1**: Additional backend codebase.
+- **database**: MySql file for setting up and managing the database.
+
+## Contributing
+Contributions are welcome! Feel free to submit issues and pull requests.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
+
+Good luck with LPG Distribution Management System!
+

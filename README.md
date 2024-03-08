@@ -58,7 +58,16 @@ Welcome to the LPG Distribution Management System! This system is designed to he
    cd ../backend1
    npm install
    ```
-4. Open Xampp, then start the Xampp server and MySql. Then click the admin button beside the MySql start button. It will take you to the phpmyadmin page. Then click on the database it will take you to the database page. Now you have to create a database(Note: keep the name of the database lpg_distribution). After creating the database, at the top of the page you can see Import, click on it. Then it will take you to the page where you can import the database by clicking on select files. After selecting the lpg_distribution.sql from the database folder of the project directory, you have to click the import button in the lower part of the page. Now, the database is ready.
+4. Set up the database:
+   - Open Xampp.
+   - Start the Xampp server and MySQL.
+   - Click the admin button beside the MySQL start button. This will take you to the phpMyAdmin page.
+   - On the phpMyAdmin page, click on the database tab. This will take you to the database management page.
+   - Create a new database with the name lpg_distribution. (Note: You can choose a different name, but ensure consistency with your project configuration.)
+   - After creating the database, navigate to the top of the page and click on "Import."
+   - On the Import page, click on the "Choose File" button to select the SQL file (lpg_distribution.sql) from the database folder of your project directory.
+   - Once the file is selected, click the "Import" button at the lower part of the page.
+   - Congratulations! Your database is now ready for use.
 5. Now, start the application.
    ```bash
    # For frontend

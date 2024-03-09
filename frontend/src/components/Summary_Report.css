@@ -5,6 +5,7 @@ table {
     width: 50%;
     border-collapse: collapse;
     margin-bottom: 50px;
+    align-self: 'center';
   }
   
   th, td {

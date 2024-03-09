@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import "./Income.css";
+import "./Expenses.css";
 import Alert from "./Alert";
 import { useNavigate, NavLink } from "react-router-dom";
 
-function Income() {
+function Expense() {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function Income() {
   }, [navigate]);
   const [data, setData] = useState([]);
   const [allData, setAllData] = useState([]);
-  const [selectedIncome, setSelectedIncome] = useState(null);
+  const [selectedExpense, setSelectedExpense] = useState(null);
   const [deleteModal, setDeleteModal] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [startDate, setStartDate] = useState(null);
@@ -26,7 +26,7 @@ function Income() {
   const [searchOn, setSearchOn] = useState(false);
 
   const openDeleteModal = (purchase) => {
-    setSelectedIncome(purchase);
+    setSelectedExpense(purchase);
     setDeleteModal(true);
   };
 
@@ -42,27 +42,29 @@ function Income() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/Incomes")
+      .get("http://localhost:3001/Expenses")
       .then((res) => {
         if (res.data.Status === "Success") {
           if (searchOn !== true) {
             setData(res.data.result);
           }
           setAllData(res.data.result);
-          //console.log(data)
+          //console.log(data)s
         }
       })
       .catch((err) => {
         console.log(err);
       });
+
+    
   }, [searchOn, data]);
 
   const handleSearch = () => {
     setSearchOn(true);
     if (startDate && endDate) {
       const filteredData = allData.filter((item) => {
-        const incomeDate = new Date(item.date);
-        return incomeDate >= startDate && incomeDate <= endDate;
+        const expenseDate = new Date(item.date);
+        return expenseDate >= startDate && expenseDate <= endDate;
       });
       console.log(filteredData);
       setData(filteredData);
@@ -82,10 +84,10 @@ function Income() {
 
   const handleDelete = (id) => {
     axios
-      .delete("http://localhost:3001/deleteIncome/" + id)
+      .delete("http://localhost:3001/deleteExpense/" + id)
       .then((res) => {
         if (res.data.Status === "Success") {
-          console.log("Delete purchase Successfully");
+          console.log("Delete expense Successfully");
           // window.location.reload(true);
           setShowDeleteAlert(true);
           setTimeout(() => {
@@ -125,7 +127,7 @@ function Income() {
             {showDeleteAlert && (
               <Alert type="success" message="Data Deleted Successfully" />
             )}
-            {selectedIncome && (
+            {selectedExpense && (
               <div
                 className="d-flex justify-content-center"
                 style={{ marginTop: "4rem" }}
@@ -133,7 +135,7 @@ function Income() {
                 <button
                   type="button"
                   className="btn btn-outline-danger mr-4"
-                  onClick={() => handleDelete(selectedIncome.income_id)}
+                  onClick={() => handleDelete(selectedExpense.expense_id)}
                 >
                   Confirm
                 </button>
@@ -157,7 +159,7 @@ function Income() {
             fontWeight: "3px",
           }}
         >
-          LIST OF ALL INCOME
+          LIST OF ALL EXPENSE
         </p>
         <div className="row mb-4">
           <div className="col">
@@ -202,13 +204,13 @@ function Income() {
       <div>
       <NavLink
           className="nav-link"
-          to="/home/addIncome"
+          to="/home/addExpenses"
           style={{ display: "flex", justifyContent: "flex-end" }}
         >
           <button className="btn btn-success" type="submit" onClick={() => {}}>
             <i className="fa fa-plus-circle" aria-hidden="true">
               {" "}
-              Add Income
+              Add Expense
             </i>
           </button>
         </NavLink>
@@ -231,7 +233,7 @@ function Income() {
               
               <tr key={index}>
                 <th scope="row">{formatDate(item.date)}</th>
-                <td>{item.income_name}</td>
+                <td>{item.expense_name}</td>
                 <td>{item.customer_name}</td>
                 <td>{item.customer_mobile}</td>
                 <td>{item.amount}</td>
@@ -280,4 +282,4 @@ function Income() {
   );
 }
 
-export default Income;
+export default Expense;

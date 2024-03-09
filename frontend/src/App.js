@@ -8,8 +8,10 @@ import Employee from './components/Employee';
 import Product from './components/Product';
 import Accounts from './components/Accounts';
 import ContactReports from './components/ContactReports';
-import Expanses from './components/Expanses';
+import Expenses from './components/Expenses';
+import AddExpenses from './components/AddExpenses';
 import Income from './components/Income';
+import AddIncome from './components/AddIncome';
 import Profile from './components/Profile';
 import About from './components/About';
 import ContactUs from './components/ContactUs';
@@ -59,8 +61,10 @@ function App() {
             <Route path='/home/addSale' element={<AddSale userName={userName} />}></Route>
             <Route path='/home/StockList' element={<StockList userName={userName}/>}></Route>
             <Route path='/home/StockReport' element={<StockReport userName={userName}/>}></Route>            
-            <Route path='/home/expanses' element={<Expanses userName={userName} />}></Route>
+            <Route path='/home/expenses' element={<Expenses userName={userName} />}></Route>
+            <Route path='/home/addExpenses' element={<AddExpenses/>}></Route>
             <Route path='/home/income' element={<Income userName={userName} />}></Route>
+            <Route path='/home/addIncome' element={<AddIncome/>}></Route>
             <Route path='/home/addContact' element={<AddContacts/>}></Route>
             <Route path='/home/contactCustomer' element={<ContactCustomers/>}></Route>
             <Route path='/home/contactSupplier' element={<ContactSuppliers/>}></Route>

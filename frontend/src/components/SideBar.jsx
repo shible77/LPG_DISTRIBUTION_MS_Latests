@@ -74,7 +74,8 @@ function SideBar(props) {
                   to="/home/addContact"
                   className="font"
                 >
-                  <i class="fa fa-address-book" aria-hidden="true"></i>Add Contacts
+                  <i class="fa fa-address-book" aria-hidden="true"></i>Add
+                  Contacts
                 </NavLink>
                 <NavLink
                   activeclassname="active"
@@ -90,7 +91,6 @@ function SideBar(props) {
                 >
                   <i className="fa fa-fw fa-address-book-o"></i>Supplier Contact
                 </NavLink>
-                
               </div>
             </div>
           </div>
@@ -334,7 +334,7 @@ function SideBar(props) {
               }`}
               data-bs-parent="#accordionFlushExample"
             >
-<div className="accordion-body" style={{ padding: 0 }}>
+              <div className="accordion-body" style={{ padding: 0 }}>
                 <NavLink
                   activeclassname="active"
                   to="/home/sells_Report"
@@ -342,8 +342,7 @@ function SideBar(props) {
                 >
                   <i className="fa fa-fw fa-file-text"></i>Sells Reports
                 </NavLink>
-              </div>
-              <div className="accordion-body" style={{ padding: 0 }}>
+
                 <NavLink
                   activeclassname="active"
                   to="/home/purchase_Report"
@@ -351,8 +350,7 @@ function SideBar(props) {
                 >
                   <i className="fa fa-fw fa-file-text"></i>Purchase Reports
                 </NavLink>
-              </div>
-              <div className="accordion-body" style={{ padding: 0 }}>
+
                 <NavLink
                   activeclassname="active"
                   to="/home/sells_Summary_Report"
@@ -360,8 +358,7 @@ function SideBar(props) {
                 >
                   <i className="fa fa-fw fa-file-text"></i>Sells Summary
                 </NavLink>
-              </div>
-              <div className="accordion-body" style={{ padding: 0 }}>
+
                 <NavLink
                   activeclassname="active"
                   to="/home/purchases_Summary_Report"
@@ -394,10 +391,18 @@ function SideBar(props) {
               <div className="accordion-body" style={{ padding: 0 }}>
                 <NavLink
                   activeclassname="active"
-                  to="/home/expanses"
+                  to="/home/expenses"
                   className="font"
                 >
-                  <i className="fa fa-fw fa-minus-circle"></i>Expanses
+                  <i className="fa fa-fw fa-minus-circle"></i>List of Expenses
+                </NavLink>
+                <NavLink
+                  activeclassname="active"
+                  to="/home/addExpenses"
+                  className="font"
+                >
+                  <i className="fa fa-plus-square" aria-hidden="true"></i> Add
+                  Expenses
                 </NavLink>
               </div>
             </div>
@@ -427,7 +432,15 @@ function SideBar(props) {
                   to="/home/income"
                   className="font"
                 >
-                  <i className="fa fa-fw fa-plus-circle"></i>Income
+                  <i className="fa fa-fw fa-plus-circle"></i>List of Income
+                </NavLink>
+                <NavLink
+                  activeclassname="active"
+                  to="/home/addIncome"
+                  className="font"
+                >
+                  <i className="fa fa-plus-square" aria-hidden="true"></i> Add
+                  Income
                 </NavLink>
               </div>
             </div>

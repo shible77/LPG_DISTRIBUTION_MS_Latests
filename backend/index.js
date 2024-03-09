@@ -855,6 +855,122 @@ app.get('/totalPurchases', async (req, res) => {
 });
 
 
+app.post('/addExpense', async (req, res) => {
+  try {
+    const expense_name= req.body.expense_name
+    const customer_name = req.body.customer_name
+    const date = new Date(req.body.date)
+    const customer_mobile = req.body.customer_mobile
+    const amount = parseInt(req.body.amount)
+   
+
+    await prisma.expenses.create({
+      data: {
+        expense_name,
+        customer_name,
+        customer_mobile,
+        date,
+        amount,
+      },
+    });
+
+    return res.json({ Status: 'Success' });
+  } catch (err) {
+    console.error(err);
+    return res.json({ Error: 'Inserting Data error in server' });
+  }
+});
+
+app.post('/addIncome', async (req, res) => {
+  try {
+    const income_name= req.body.income_name
+    const customer_name = req.body.customer_name
+    const date = new Date(req.body.date)
+    const customer_mobile = req.body.customer_mobile
+    const amount = parseInt(req.body.amount)
+   
+
+    await prisma.incomes.create({
+      data: {
+        income_name,
+        customer_name,
+        customer_mobile,
+        date,
+        amount,
+      },
+    });
+
+    return res.json({ Status: 'Success' });
+  } catch (err) {
+    console.error(err);
+    return res.json({ Error: 'Inserting Data error in server' });
+  }
+});
+
+app.get('/Expenses', async(req, res) => {
+  try{
+    const result = await prisma.expenses.findMany();
+    if(result.length === 0)
+    {
+      return res.status(200).json({Error: 'No Such data exist in the server'})
+    }else{
+      return res.status(200).json({Status: 'Success', result: result})
+    }
+
+  }catch(error){
+    console.error('Error getting data from server:', error);
+    return res.status(500).json({ Error: 'Getting data error from server' });
+  }
+})
+
+app.get('/Incomes', async(req, res) => {
+  try{
+    const result = await prisma.incomes.findMany();
+    if(result.length === 0)
+    {
+      return res.status(200).json({Error: 'No Such data exist in the server'})
+    }else{
+      return res.status(200).json({Status: 'Success', result: result})
+    }
+
+  }catch(error){
+    console.error('Error getting data from server:', error);
+    return res.status(500).json({ Error: 'Getting data error from server' });
+  }
+})
+
+app.delete('/deleteExpense/:id', async(req, res)=> {
+  try{
+    const id = parseInt(req.params.id)
+    const deletedExpense = await prisma.expenses.delete({
+      where: {
+        expense_id: id
+      }
+    })
+    return res.status(200).json({Status: 'Success', result: deletedExpense})
+  }
+  catch(err){
+    return res.status(500).json({Error: 'Error occurred during deleting data'})
+  }
+})
+
+app.delete('/deleteIncome/:id', async(req, res) => {
+  try{
+    const id = parseInt(req.params.id)
+    // console.log(id)
+    const deletedIncome = await prisma.incomes.delete({
+      where: {
+        income_id: id,
+      },
+    });
+    return res.status(200).json({Status: 'Success', result: deletedIncome})
+  }catch(error){
+    return res.status(500).json({Error: 'Error occurred during deleting data'})
+  }
+  
+})
+
+
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });

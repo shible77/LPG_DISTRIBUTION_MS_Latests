@@ -112,3 +112,21 @@ model stock {
   kg_45 Int
   total Int
 }
+
+model incomes {
+  income_id   Int      @id @default(autoincrement())
+  income_name    String
+  customer_name     String
+  date DateTime
+  customer_mobile     String
+  amount        Int
+}
+
+model expenses {
+  expense_id   Int      @id @default(autoincrement())
+  expense_name    String
+  customer_name     String
+  date DateTime
+  customer_mobile     String
+  amount        Int
+}

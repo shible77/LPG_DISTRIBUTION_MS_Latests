@@ -69,19 +69,38 @@ Welcome to the LPG Distribution Management System! This system is designed to he
    - Once the file is selected, click the "Import" button at the lower part of the page.
    - Congratulations! Your database is now ready for use.
 5. Now, start the application.
+   - Open the project folder in VS Code.
+   - Create 3 instances of powershell in the terminal of VS Code.
+   - In the first powershell instance, write the following command: 
+   ```bash
+   # For backend
+   cd backend
+   npm start 
+   ```
+   - In the second powershell instance, write the following command:
+   ```bash
+   # For backend1
+   cd backend1
+   npm start
+   ```
+   - IN the third and the last powershell instance, write the following command:
    ```bash
    # For frontend
    cd frontend
    npm start
-
-   # For backend
-   cd ../backend
-   npm start
-
-   #for backend1
-   cd ../backend1
-   npm start
    ```
+   - Then, it will open the login page of this web application in your default browser.
+   - You can login the application using the following log in credentials:
+   1.email:
+   ```bash
+   shible0805@gmail.com
+   ``` 
+   2.password:
+   ```bash
+   shible7
+   ```
+   - Your are logged in. Now, You can access all the features provided by our LPG Distribution Management System.
+   
 ## Usage
 
 1. Access the frontend through the provided URL after starting the frontend server.

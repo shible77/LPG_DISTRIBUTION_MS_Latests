@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2024 at 07:44 PM
+-- Generation Time: Mar 09, 2024 at 10:56 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -105,6 +105,52 @@ INSERT INTO `employee` (`employee_id`, `first_name`, `last_name`, `date_of_birth
 (5, 'Emam', 'Hossain', '1999-09-07', 'Cosmopolitan R/A, Road No:9, Chittagong', 'Sonaimuri, Chatkhil, Noakhali', '01712233445', '2024-01-27', NULL, 'HR Manager', 'Managerial', '50000', 'On', 'https://res.cloudinary.com/doh71p23w/image/upload/v1706350150/c93aifdl35cwt4i65cj5.jpg'),
 (6, 'H M Imtiaz', 'Uddin', '1999-10-07', 'Choumohoni, Agrabad, Chittagong', 'Choumohoni, Agrabad, Chittagong', '01823344556', '2024-01-28', NULL, 'HR Manager', 'Managerial', '45000', 'On', 'https://res.cloudinary.com/doh71p23w/image/upload/v1706422574/ihya9kfanokgdgdhnhg1.jpg'),
 (7, 'Shadakur Rahman', 'Tamgid', '2002-05-01', 'Chittagong University', 'Chokoria, Chittagong', '01867453423', '2024-01-29', NULL, 'Operations Manager', 'Managerial', '45000', 'On', 'https://res.cloudinary.com/doh71p23w/image/upload/v1706502331/ufajq1w8tr3rofkvpwkp.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `expenses`
+--
+
+CREATE TABLE `expenses` (
+  `expense_id` int(11) NOT NULL,
+  `expense_name` varchar(100) NOT NULL,
+  `customer_name` varchar(100) NOT NULL,
+  `customer_mobile` varchar(100) NOT NULL,
+  `date` date NOT NULL,
+  `amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `expenses`
+--
+
+INSERT INTO `expenses` (`expense_id`, `expense_name`, `customer_name`, `customer_mobile`, `date`, `amount`) VALUES
+(4, 'Table buy', 'Rasel', '01595795924', '2024-02-16', 5000),
+(10, 'Fan purchase', 'Biplob', '01987247493', '2024-03-09', 10000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `incomes`
+--
+
+CREATE TABLE `incomes` (
+  `income_id` int(11) NOT NULL,
+  `income_name` varchar(100) NOT NULL,
+  `customer_name` varchar(100) NOT NULL,
+  `customer_mobile` varchar(100) NOT NULL,
+  `date` date NOT NULL,
+  `amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `incomes`
+--
+
+INSERT INTO `incomes` (`income_id`, `income_name`, `customer_name`, `customer_mobile`, `date`, `amount`) VALUES
+(3, 'Table sell', 'Rasel', '014984722', '2024-02-26', 2000),
+(6, 'Rent', 'Shible', '0198749274', '2024-03-09', 30000);
 
 -- --------------------------------------------------------
 
@@ -269,6 +315,18 @@ ALTER TABLE `employee`
   ADD PRIMARY KEY (`employee_id`);
 
 --
+-- Indexes for table `expenses`
+--
+ALTER TABLE `expenses`
+  ADD PRIMARY KEY (`expense_id`);
+
+--
+-- Indexes for table `incomes`
+--
+ALTER TABLE `incomes`
+  ADD PRIMARY KEY (`income_id`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -319,6 +377,18 @@ ALTER TABLE `contacts`
 --
 ALTER TABLE `employee`
   MODIFY `employee_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `expenses`
+--
+ALTER TABLE `expenses`
+  MODIFY `expense_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `incomes`
+--
+ALTER TABLE `incomes`
+  MODIFY `income_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `product`

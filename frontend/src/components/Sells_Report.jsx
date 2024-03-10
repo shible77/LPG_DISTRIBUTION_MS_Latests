@@ -41,19 +41,19 @@ function Sells_Report() {
         <thead>
           <tr>
             <th>Date</th>
-            <th>Customer Name</th>
-            <th>Location</th>
-            <th>Delivery Date</th>
-            <th>Refill 5.5kg</th>
-            <th>Cylinder 5.5kg</th>
-            <th>Refill 12kg</th>
-            <th>Cylinder 12kg</th>
-            <th>Refill 25kg</th>
-            <th>Cylinder 25kg</th>
-            <th>Refill 35kg</th>
-            <th>Cylinder 35kg</th>
-            <th>Refill 45kg</th>
-            <th>Cylinder 45kg</th>
+            <th>C_Name</th>
+            <th>Loc</th>
+            <th>Del_Date</th>
+            <th>Ref 5.5kg</th>
+            <th>Cyl 5.5kg</th>
+            <th>Ref 12kg</th>
+            <th>Cyl 12kg</th>
+            <th>Ref 25kg</th>
+            <th>Cyl 25kg</th>
+            <th>Ref 35kg</th>
+            <th>Cyl 35kg</th>
+            <th>Ref 45kg</th>
+            <th>Cyl 45kg</th>
             <th>Total</th>
           </tr>
         </thead>

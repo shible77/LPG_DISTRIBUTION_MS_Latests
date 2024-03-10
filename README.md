@@ -41,9 +41,9 @@ Welcome to the LPG Distribution Management System! This system is designed to he
 
 1. Clone the repository: `git clone https://github.com/shible77/LPG_DISTRIBUTION_MS_Latests.git`
 
-2. Navigate to the project directory: `cd LPG_Distribution_Management_System`
+2. Navigate to the project directory: `cd LPG_DISTRIBUTION_MS_Latests`
 
-3. Install dependencies for the frontend, backend and backend1.
+3. Install dependencies for the frontend, backend, and backend1.
 
    ```bash
    # For frontend
@@ -59,7 +59,7 @@ Welcome to the LPG Distribution Management System! This system is designed to he
    npm install
    ```
 4. Set up the database:
-   - Open Xampp.
+   - Open Xampp Control Panel.
    - Start the Xampp server and MySQL.
    - Click the admin button beside the MySQL start button. This will take you to the phpMyAdmin page.
    - On the phpMyAdmin page, click on the database tab. This will take you to the database management page.
@@ -70,36 +70,37 @@ Welcome to the LPG Distribution Management System! This system is designed to he
    - Congratulations! Your database is now ready for use.
 5. Now, start the application.
    - Open the project folder in VS Code.
-   - Create 3 instances of powershell in the terminal of VS Code.
-   - In the first powershell instance, write the following command: 
+   - Create 3 instances of PowerShell in the terminal of VS Code.
+   - In the first PowerShell instance, write the following command: 
    ```bash
    # For backend
    cd backend
    npm start 
    ```
-   - In the second powershell instance, write the following command:
+   - In the second PowerShell instance, write the following command:
    ```bash
    # For backend1
    cd backend1
    npm start
    ```
-   - IN the third and the last powershell instance, write the following command:
+   - In the third and the last PowerShell instance, write the following command:
    ```bash
    # For frontend
    cd frontend
    npm start
    ```
    - Then, it will open the login page of this web application in your default browser.
-   - You can login the application using the following log in credentials:
-   1.email:
+   - You can log in to the application using the following login credentials:
+     
+  - **email**:
    ```bash
    shible0805@gmail.com
    ``` 
-   2.password:
+   - **password**:
    ```bash
    shible7
    ```
-   - Your are logged in. Now, You can access all the features provided by our LPG Distribution Management System.
+- You are logged in. Now, You can access all the features provided by our LPG Distribution Management System.
    
 ## Usage
 
@@ -119,5 +120,5 @@ Contributions are welcome! Feel free to submit issues and pull requests.
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
-Good luck with LPG Distribution Management System!
+Good luck with the LPG Distribution Management System!
 
